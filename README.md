@@ -1,1 +1,32 @@
-# use-effect-hook-shortcuts
+# useEffect shortcuts
+🌌 **What is useEffect shortcuts**   
+It's a useState wrapper that adds just a few features.  
+  
+🌄 **What do the useEffect shortcuts do?**  
+They are a custom useState hook that creates common useEffect hooks on-demand.  
+  
+🌆 **How does it work?**  
+Since you can place extra properties on a function, we placed a few useEffect wrappers 
+directly inside your set function from useState. There is `use`, `pipe`, or `bool`. 
+All they do is call useEffect or useState as needed.
+  
+## Examples
+
+### `.pipe()` creates a computed value
+```js
+function SomeComponent() {
+  const [name, setName] = useStateRx("Red Sofa")
+  const initials = setName.pipe(() => 
+      name.split(" ").map(name_part => 
+          `${name_part[0]}.`).join(" "))
+          
+  console.log(initials) // "R. S."
+
+  return (
+    <>
+      <p> {initials} </p>
+      <input onInput={e => setName(e.target.value)}
+    </>
+  )
+}
+```
