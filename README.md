@@ -30,3 +30,20 @@ function SomeComponent() {
   )
 }
 ```
+
+### `.bool()` creates matching ternaries
+```js 
+function OtherComponent() {
+  const [countdown, setCountdown] = useStateRx(0)
+  
+  const [notClicked, isClicked] = setCountdown.bool("red","green")
+
+  return (
+    <>
+      <button onClick={() => setCountdown(3)}>Flip for 3 seconds</button>
+      <p className={notClicked}>{notClicked}</p>
+      <p className={isClicked}>{isClicked}</p>
+    </>
+  )
+}
+```
