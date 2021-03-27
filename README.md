@@ -37,6 +37,12 @@ function OtherComponent() {
   const [countdown, setCountdown] = useStateRx(0)
   
   const [notClicked, isClicked] = setCountdown.bool("red","green")
+  
+  setCountdown.use(() => {
+    if(countdown) {
+      window.setTimeout(() => setCountdown(countdown - 1), 1000)
+    }
+  })
 
   return (
     <>
