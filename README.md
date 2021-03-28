@@ -10,6 +10,15 @@ Since you can place extra properties on a function, we placed a few useEffect wr
 directly inside your set function from useState. There is `use`, `pipe`, or `bool`. 
 All they do is call useEffect or useState as needed.
   
+<br>  
+  
+## Live CDN link
+```html
+<script src="https://cdn.jsdelivr.net/gh/VSADX/use-effect-hook-shortcuts@main/rx-hook-effects.js" type="module"></script>
+```
+  
+<br>  
+  
 ## Examples
 
 ### `.pipe()` creates a computed value
